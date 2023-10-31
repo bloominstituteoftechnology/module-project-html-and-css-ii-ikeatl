@@ -93,22 +93,22 @@
     /* 👉 Task 4- Target the divs that are directly nested underneath the id headerTop.
     Make them display as inline block, instead of block.
     This will make them render on the same line. */
-    /* #headerTop>div {
+    #headerTop>div {
       display: inline-block;
-    } */
+    }
 
     /* 👉 Task 5- Target the spans that are nested inside the id headerTop.
     Make them have some margin on the right.
     This will prevent the spans from crashing against one another. */
-    #headerTop, span {
-      margin-right: 2rem; 
+    #headerTop span {
+      margin-right: 2rem;
     }
 
     /* 👉 Task 6- Target the first span nested inside the element with id headerTop.
     Make it have a font weight of bold, and transform the text to uppercase. */
-    #headerTop, span:nth-of-type(1) {
+    #headerTop span:nth-of-type(1) {
       font-weight: bold;
-      text-transform: uppercase; 
+      text-transform: uppercase;
     }
 
     /* 👉 Task 7- Target the id headerBottom.
@@ -122,7 +122,8 @@
     Make them display as inline block, instead of block.
     This will cause them to render on the same line.
     You can consolidate this rule with the one on step. 4 */
-    #headerBottom div, #headerTop div {
+    #headerBottom div,
+    #headerTop div {
       display: inline-block;
     }
 
@@ -141,28 +142,28 @@
     /* 👉 Task 10- Research how to remove all the default styling of button elements.
     Target the button elements inside the element with id headerBottom.
     Remove all their styling, give them a bit of margin to the right, and a cursor of pointer. */
-    #headerBottom, div:nth-child(2) {
-  /* // This removes styles added by default to button elements.
-  // For when something should semantically be a button,
-  // but isn't buttony in appearance. */
-  background-color: transparent;
-  border: none;
-  margin: 0;
-  padding: 0;
-  text-align: inherit;
-  font: inherit;
-  border-radius: 0;
-  appearance: none; 
-  /* // Just in case we missed anything. */
-  margin-right: 0.5rem;
-  cursor: pointer;
+    #headerBottom button {
+    /* This removes styles added by default to button elements.
+      For when something should semantically be a button,
+      but isn't buttony in appearance. */
+      background-color: transparent;
+      border: none;
+      margin: 0;
+      padding: 0;
+      text-align: inherit;
+      font: inherit;
+      border-radius: 0;
+      appearance: none;
+      /* Just in case we missed anything. */
+      margin-right: 0.5rem;
+      cursor: pointer;
 
-}
+    }
 
     /* 👉 Task 11- Target the button element inside the id headerBottom that has a class of active
     Make the font weight be bolder, and add a bottom border of 2 pixels solid color (you choose the color).
     Add the class name to the "All mail" button. */
-    #headerBottom button:active:first-child {
+    #headerBottom button.active {
       font-weight: bolder;
       border-bottom: 2px solid tomato;
     }
@@ -179,23 +180,27 @@
     .email {
       padding: 0.6rem;
       padding-left: 0.9rem;
-      border-bottom: lightgray;
+      border-bottom: 1px solid lightgray;
     }
 
     /* 👉 Task 14- Target each div inside the element with a class of email.
     Make the email author and the email subject take 35% of the width of the parent element.
     Make the check, the date and the size take up 8% of the width of the parent element.
     This will arrange the details in visible columns. */
-    .email .email-name, .email-subject {
+    .email .email-name,
+    .email-subject {
       width: 35%;
     }
-    .email .email.check, .email-date, .email-size {
+
+    .email .email-check,
+    .email-date,
+    .email-size {
       width: 8%;
     }
 
     /* 👉 Task 15- Target the second email and have its font weight be bold.
     This will make it look "unread". */
-    #emails >:nth-child(2) {
+    #emails>:nth-child(2) {
       font-weight: bold;
     }
 
@@ -206,11 +211,11 @@
 
 <body>
   <div id="instructions">
-    <h1>HTML & CSS II</h1>
+    <!-- <h1>HTML & CSS II</h1>
     <p>Please load this file in VSCode and Chrome, and open the Elements tab, Sources sub-tab, in Chrome Dev Tools.</p>
     <p>Work through the challenges found inside both style tags in this document.</p>
     <p>You will find a screenshot of the end result inside the design folder.</p>
-    <p>You can now comment out the h1 and the p tags...</p>
+    <p>You can now comment out the h1 and the p tags...</p> -->
   </div>
   <div>
     <header>
@@ -226,7 +231,7 @@
       <div id="headerBottom">
         <div>Compose</div>
         <div>
-          <button>All mail</button>
+          <button class="active">All mail</button>
           <button>Unread</button>
           <button>Pinned</button>
           <button>VIPs</button>
